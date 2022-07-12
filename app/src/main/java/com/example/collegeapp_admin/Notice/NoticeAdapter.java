@@ -1,6 +1,7 @@
 package com.example.collegeapp_admin.Notice;
 
 import android.content.Context;
+import android.graphics.Matrix;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +65,6 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.viewholder
         DatabaseReference reference=noticeRef.child(key);
         reference.removeValue();
     }
-
     @Override
     public int getItemCount() {
         return list.size();

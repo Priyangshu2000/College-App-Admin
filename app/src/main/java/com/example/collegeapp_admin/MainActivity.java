@@ -7,10 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.collegeapp_admin.Faculty.updateFaculty;
 import com.example.collegeapp_admin.Notice.deleteNotice;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-CardView addNotice,uploadImage,uploadEbook,deleteNotice;
+CardView addNotice,uploadImage,uploadEbook,deleteNotice,updateFaculty;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,10 +20,12 @@ CardView addNotice,uploadImage,uploadEbook,deleteNotice;
         uploadImage=findViewById(R.id.uploadImage);
         uploadEbook=findViewById(R.id.uploadEbook);
         deleteNotice=findViewById(R.id.delete_notice);
+        updateFaculty=findViewById(R.id.updateFaculty);
         addNotice.setOnClickListener(this);
         uploadImage.setOnClickListener(this);
         uploadEbook.setOnClickListener(this);
         deleteNotice.setOnClickListener(this);
+        updateFaculty.setOnClickListener(this);
 
     }
 
@@ -44,6 +47,10 @@ CardView addNotice,uploadImage,uploadEbook,deleteNotice;
             case R.id.delete_notice:
                 Intent delNotice= new Intent(MainActivity.this, deleteNotice.class);
                 startActivity(delNotice);
+                break;
+            case R.id.updateFaculty:
+                Intent update_faculty= new Intent(MainActivity.this, updateFaculty.class);
+                startActivity(update_faculty);
                 break;
         }
     }

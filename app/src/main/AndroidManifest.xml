@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeAppAdmin">
         <activity
+            android:name=".Faculty.updateFaculty"
+            android:exported="false" />
+        <activity
             android:name=".Notice.deleteNotice"
             android:exported="false" />
         <activity
