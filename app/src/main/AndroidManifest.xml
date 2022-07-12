@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeAppAdmin">
         <activity
+            android:name=".Notice.deleteNotice"
+            android:exported="false" />
+        <activity
+            android:name=".uploadEbook"
+            android:exported="false" />
+        <activity
             android:name=".uploadImage"
             android:exported="false" />
         <activity

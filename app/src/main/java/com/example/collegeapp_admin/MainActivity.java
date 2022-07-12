@@ -7,16 +7,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.collegeapp_admin.Notice.deleteNotice;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-CardView addNotice,uploadImage;
+CardView addNotice,uploadImage,uploadEbook,deleteNotice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addNotice = findViewById(R.id.upload_notice);
         uploadImage=findViewById(R.id.uploadImage);
+        uploadEbook=findViewById(R.id.uploadEbook);
+        deleteNotice=findViewById(R.id.delete_notice);
         addNotice.setOnClickListener(this);
         uploadImage.setOnClickListener(this);
+        uploadEbook.setOnClickListener(this);
+        deleteNotice.setOnClickListener(this);
+
     }
 
     @Override
@@ -29,6 +36,14 @@ CardView addNotice,uploadImage;
             case R.id.uploadImage:
                 Intent uploadImage= new Intent(MainActivity.this,uploadImage.class);
                 startActivity(uploadImage);
+                break;
+            case R.id.uploadEbook:
+                Intent uploadEbook= new Intent(MainActivity.this,uploadEbook.class);
+                startActivity(uploadEbook);
+                break;
+            case R.id.delete_notice:
+                Intent delNotice= new Intent(MainActivity.this, deleteNotice.class);
+                startActivity(delNotice);
                 break;
         }
     }

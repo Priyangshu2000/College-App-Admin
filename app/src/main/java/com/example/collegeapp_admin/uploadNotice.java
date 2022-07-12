@@ -69,7 +69,7 @@ ActivityResultLauncher<String> activityResultLauncher;
                     time= Calendar.getInstance().getTime().toString();
                     time=time.substring(0,20);
                     postId=time;
-                    postref.child("Notice").child(postId).child("noticeTitle").setValue(noticeTitle.getText().toString());
+                    postref.child("Notice").child(postId).child("body").setValue(noticeTitle.getText().toString());
                 }
               else{
                   uploadData();
@@ -82,7 +82,7 @@ ActivityResultLauncher<String> activityResultLauncher;
         time= Calendar.getInstance().getTime().toString();
         time=time.substring(0,20);
         postId=time;
-        postref.child("Notice").child(postId).child("noticeTitle").setValue(noticeTitle.getText().toString());
+        postref.child("Notice").child(postId).child("body").setValue(noticeTitle.getText().toString());
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
         progressDialog.setTitle("Uploading...");
@@ -101,7 +101,7 @@ ActivityResultLauncher<String> activityResultLauncher;
                     @Override
                     public void onSuccess(Uri uri) {
 //                                Toast.makeText(getContext(), uploadedurl+"here", Toast.LENGTH_SHORT).show();
-                        postref.child("Notice").child(postId).child("noticeImage").setValue(uri.toString());
+                        postref.child("Notice").child(postId).child("noticePic").setValue(uri.toString());
                         onBackPressed();
                     }
                 });
