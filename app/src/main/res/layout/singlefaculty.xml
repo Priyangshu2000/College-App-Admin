@@ -13,14 +13,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:gravity="center_vertical"
+        android:paddingTop="5dp"
+        android:weightSum="2">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="0.5"
-            android:layout_margin="6dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1.5"
+            android:layout_gravity="center_vertical"
             android:gravity="center_vertical">
             <TextView
                 android:layout_width="wrap_content"
@@ -45,58 +53,55 @@
                 android:text="example@gmail.com"
                 android:textSize="16sp"
                 android:textColor="@color/black"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/updateFaculty_updateButton"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_gravity="start"
-                    android:gravity="center"
-                    app:strokeColor="@color/teal_700"
-                    android:text="Update Info"
-                    android:textAllCaps="false"
-                    android:layout_weight="0.5"
-                    android:textColor="@color/teal_700"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:rippleColor="@color/teal_200" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/updateFaculty_deleteButton"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:strokeColor="@color/teal_700"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="4dp"
-                    android:layout_toRightOf="@id/updateFaculty_updateButton"
-                    android:text="Delete"
-                    android:layout_weight="0.5"
-                    android:textAllCaps="false"
-                    android:textColor="@color/teal_700"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:rippleColor="@color/teal_200" />
-            </LinearLayout>
         </LinearLayout>
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_marginHorizontal="8dp"
-            android:padding="8dp"
-            android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_baseline_person_24"
             android:id="@+id/updateFaculty_userPic"
             app:civ_circle_background_color="@color/teal_200"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingStart="7dp"
+            android:paddingBottom="4dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateFaculty_updateButton"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="center"
+                app:strokeColor="@color/teal_700"
+                android:text="Update Info"
+                android:textAllCaps="false"
+                android:layout_weight="0.75"
+                android:textColor="@color/teal_700"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:rippleColor="@color/teal_200" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateFaculty_deleteButton"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:strokeColor="@color/teal_700"
+                android:layout_marginStart="4dp"
+                android:text="Delete"
+                android:layout_weight="0.5"
+                android:textAllCaps="false"
+                android:textColor="@color/teal_700"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:rippleColor="@color/teal_200" />
+        </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

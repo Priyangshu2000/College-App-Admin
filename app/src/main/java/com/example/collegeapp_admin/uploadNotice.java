@@ -50,6 +50,8 @@ ActivityResultLauncher<String> activityResultLauncher;
         noticeTitle=findViewById(R.id.notice_title);
         uploadNotice=findViewById(R.id.button_upload_notice);
         postref=FirebaseDatabase.getInstance().getReference();
+
+
         uploadFromGallery();
         addImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +59,8 @@ ActivityResultLauncher<String> activityResultLauncher;
                 activityResultLauncher.launch("image/*");
             }
         });
+
+
         uploadNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

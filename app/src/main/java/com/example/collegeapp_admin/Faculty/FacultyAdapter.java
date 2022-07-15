@@ -1,6 +1,7 @@
 package com.example.collegeapp_admin.Faculty;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +73,16 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.viewhold
     }
 
     private void updateData(int pos) {
-
+        Intent intent= new Intent(context,FacultyDetails.class);
+        intent.putExtra("FacultyID",list.get(pos).getFacultyId());
+        intent.putExtra("name",list.get(pos).getName());
+        intent.putExtra("designation",list.get(pos).getDesignation());
+        intent.putExtra("userPic",list.get(pos).getUserpic());
+        intent.putExtra("gender",list.get(pos).getGender());
+        intent.putExtra("email",list.get(pos).getEmail());
+        intent.putExtra("flag","1");
+        intent.putExtra("department",Dept);
+        context.startActivity(intent);
     }
 
     @Override

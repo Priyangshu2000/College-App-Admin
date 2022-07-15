@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -14,6 +15,7 @@ import com.example.collegeapp_admin.Faculty.FacultyModel;
 import com.example.collegeapp_admin.Notice.NoticeAdapter;
 import com.example.collegeapp_admin.Notice.deleteNotice;
 import com.example.collegeapp_admin.R;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +29,7 @@ RecyclerView cs,it,ece;
 LinearLayout csnodata,itnodata,ecenodata;
 ArrayList<FacultyModel>csfaculty,ecefaculty,ITfaculty;
 DatabaseReference facultyRef;
+ExtendedFloatingActionButton efab;
 FacultyAdapter adapterIT,adaptercs,adapterece;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ FacultyAdapter adapterIT,adaptercs,adapterece;
         csnodata=findViewById(R.id.updateFaculty_nodatafoundcs);
         itnodata=findViewById(R.id.updateFaculty_nodatafoundIT);
         ecenodata=findViewById(R.id.updateFaculty_nodatafoundEce);
+        efab=findViewById(R.id.updateFaculty_fab);
 
         csfaculty=new ArrayList<>();
         ecefaculty=new ArrayList<>();
@@ -67,6 +71,17 @@ FacultyAdapter adapterIT,adaptercs,adapterece;
         csloadFaculty();
         ITloadFaculty();
         eceloadFaculty();
+
+
+
+        efab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(updateFaculty.this,FacultyDetails.class);
+                intent.putExtra("flag","0");
+                startActivity(intent);
+            }
+        });
     }
 
 
